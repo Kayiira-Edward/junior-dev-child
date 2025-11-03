@@ -1,11 +1,10 @@
 <?php
 function junior_dev_child_enqueue_styles(){
     //parent theme is loaded first
-    wp_enqueue_style('parent-styles', get_template_directory_uri());
-    //child theme is loaded first
-    wp_enqueue_style('child-styles', get_template_directory_uri() . '/style.css');
-    //parent theme is loaded second
-    wp_enqueue_style('parent-styles', get_template_directory_uri() . '/style.css');
+    wp_enqueue_style('parent-styles', get_template_directory_uri(). '/style.css');
+    //child theme is loaded next
+    wp_enqueue_style('child-styles', get_stylesheet_uri(), array('parent-style');
+
 }
 add_action('wp_enqueue_scripts', 'junior_dev_child_enqueue_styles');
 //  CPT
