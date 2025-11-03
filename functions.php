@@ -1,8 +1,8 @@
 <?php
 function junior_dev_child_enqueue_styles(){
     //child theme is loaded first
-    wp_enqueue_style('child-styles', get_template_directory_uri() . '/style.css');
-    //parent theme is loaded second
+    wp_enqueue_style('child-styles', get_template_directory_uri());
+    //parent theme is loaded next
     wp_enqueue_style('parent-styles', get_template_directory_uri() . '/style.css');
 }
 add_action('wp_enqueue_scripts', 'junior_dev_child_enqueue_styles');
